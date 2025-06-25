@@ -1,0 +1,36 @@
+# AI Research Assistant - GPU Requirements
+# Additional dependencies for GPU acceleration
+# 
+# GPU Installation Instructions:
+# 1. Install CUDA toolkit from NVIDIA
+# 2. Install PyTorch with CUDA support:
+#    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# 3. Then install these additional requirements
+
+# Include base requirements
+-r requirements.txt
+
+# GPU-accelerated PyTorch (install separately with CUDA)
+# Run: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+torch>=1.9.0
+torchvision>=0.10.0
+torchaudio>=0.9.0
+
+# GPU-optimized libraries
+cupy>=11.0.0
+numba>=0.56.0
+
+# Fast attention mechanisms
+flash-attn>=2.0.0
+
+# Model quantization and optimization
+bitsandbytes>=0.39.0
+accelerate[deepspeed]>=0.20.0
+
+# GPU monitoring
+gpustat>=1.0.0
+nvidia-ml-py>=11.495.46
+
+# Distributed training (optional)
+# deepspeed>=0.9.0
+# fairscale>=0.4.0

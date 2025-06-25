@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "title": "International Journal for Research Trends and Innovation (www.ijrti.org)",
+    "authors": [
+      "Research Trends",
+      "Neha Saini",
+      "Assistant Professor",
+      "College Dinanagar",
+      "Computer Science",
+      "Artificial Intelligence",
+      "International Journal"
+    ],
+    "abstract": "- It is the science and engineering of making intelligent machines, especially intelligent computer programs. It is related to the similar task of using computers to understand human intelligence, but AI does not have to confine itself to methods that are biologically observable. While no consensual definition of Artificial Intelligence (AI) exists, AI is broadly characterized as the study of computations that allow for perception, reason and action. Today, the amount of data that is generated, by both humans and machines, far outpaces humans\u2019 ability to absorb, interpret, and make complex decisions based on that data. Artificial intelligence forms the basis for all computer learning and is the future of all complex decision making. This paper examines features of artificial Intelligence, introduction, definitions of AI, history, applications, growth and achievements.",
+    "keywords": [
+      "- machine learning",
+      "deep learning",
+      "neural networks",
+      "Natural Language Processing and Knowledge Base System"
+    ],
+    "venue": "Science",
+    "year": 2023,
+    "doi": null,
+    "arxiv_id": null
+  },
+  "sections": [
+    {
+      "title": "Conclusion",
+      "content": "Till now we have discussed in brief about Artificial Intelligence. We have discussed some of its principles, its applications, its \nachievements etc.The ultimate goal of institutions and scientists working on AI is to solve majority of the problems or to achieve \nthe tasks which we humans directly can\u2019t accomplish. It is for sure that development in this field of computer science will change \nthe complete scenario of the world Now it is the responsibility of creamy layer of engineers to develop this field.",
+      "level": 1,
+      "page_start": 4,
+      "page_end": 4
+    },
+    {
+      "title": "References",
+      "content": "1. http://en.wikibooks.org/wiki/Computer_Science:Artificial_Intelligence \nhttp://www.howstuffworks.com/arificialintelligence \n2. http:// www.google.co.in \n3. http://www.library.thinkquest.org \n4. https://www.javatpoint.com/application-of-ai \n5. https://www.educba.com/artificial-intelligence-techniques/ \n6. https://www.cigionline.orgw/articles/cyber-security-\nbattlefield/?utm_source=google_ads&utm_medium=grant&gclid=EAIaIQobChMIsdz9qLSF_AIVzQ0rCh1bNQylEAA\nYAiAAEgI40_D_BwE",
+      "level": 1,
+      "page_start": 4,
+      "page_end": 4
+    }
+  ],
+  "figures": [
+    {
+      "caption": "Figure from page 1",
+      "image_path": "/tmp/figures/page_1_fig_1.png",
+      "page_number": 1,
+      "figure_number": null
+    },
+    {
+      "caption": "Figure from page 2",
+      "image_path": "/tmp/figures/page_2_fig_1.png",
+      "page_number": 2,
+      "figure_number": null
+    },
+    {
+      "caption": "Figure from page 2",
+      "image_path": "/tmp/figures/page_2_fig_2.png",
+      "page_number": 2,
+      "figure_number": null
+    },
+    {
+      "caption": "Figure from page 3",
+      "image_path": "/tmp/figures/page_3_fig_1.png",
+      "page_number": 3,
+      "figure_number": null
+    },
+    {
+      "caption": "Figure from page 4",
+      "image_path": "/tmp/figures/page_4_fig_1.png",
+      "page_number": 4,
+      "figure_number": null
+    },
+    {
+      "caption": "Figure from page 5",
+      "image_path": "/tmp/figures/page_5_fig_1.png",
+      "page_number": 5,
+      "figure_number": null
+    }
+  ],
+  "tables": [
+    {
+      "caption": "Table from page 1",
+      "content": " | None | RESEARCH PAPER ON ARTIFICIAL INTELLIGENCE & | None | None | None | None | None\nNone | None | ITS APPLICATIONS | None | None | None | None | None\nNone | None |  | None | None | None | None | None\nNone | None |  | None | None | None | None | None\nNone | None | Prof. Neha Saini | None | None | None | None | None\nNone | None |  | None | None | None | None | None\nNone | None | Assistant Professor in Department of Computer Science & IT | None | None | None | None | None\nNone | None | SDAM College Dinanagar | None | None | None | None | None\nNone | None |  | None | None | None | None | None\nNone | None | ABSTRACT- | None | None | None | None | None\nNone | None |  | None | None | None | None | None\nNone | None | It is the science and engineering of making intelligent machines, especially intelligent computer programs. It is related to | None | None | None | None | None\nNone | None | the similar task of using computers to understand human intelligence, but AI does not have to confine itself to methods that | None | None | None | None | None\nNone | None | are biologically observable. While no consensual definition of Artificial Intelligence (AI) exists, AI is broadly characterized | None | None | None | None | None\nNone | None | as the study of computations that allow for perception, reason and action. | None | None | None | Today, the amount of data that is generated, by | None\nNone | None | both humans and machines, far outpaces humans\u2019 ability to absorb, interpret, and make complex decisions based on that data. | None | None | None | None | None\nNone | None | Artificial intelligence forms the basis for all computer learning and is the future of all complex decision making. | None | None | None | None | This paper\nNone | None | examines features of artificial Intelligence, introduction, definitions of AI, history, applications, growth and achievements. | None | None | None | None | None\nNone | None |  | None | None | None | None | None\nNone | None | KEYWORDS- | None | machine learning,deep learning,neural networks, | Natural Language Processing and Knowledge Base System | None | None\nNone | None |  | None | None | None | None | None\nINTRODUCTION- | None | None | None | None | None | None | None\nArtificial Intelligence ( AI ) is the branch of computer science which deals with intelligence of machines where an intelligent agent\nis a system that takes actions which maximize its chances of success. It is the study of ideas which enable computers to do the things\nthat make people seem intelligent. The central principles of AI include such as reasoning, knowledge, planning, learning,\ncommunication, perception and the ability to move and manipulate objects. It is the science and engineering of making intelligent\nmachines, especially intelligent computer programs\nARTIFICIAL INTELLIGENCE METHODS: | None |  | None | None | None | None | None\nNone | None | Artificial Intelligence ( AI ) is the branch of computer science which deals with intelligence of machines where an intelligent agent | None | None | None | None | None\nNone | None | is a system that takes actions which maximize its chances of success. It is the study of ideas which enable computers to do the things | None | None | None | None | None\nNone | None | that make people seem intelligent. The central principles of AI include such as reasoning, knowledge, planning, learning, | None | None | None | None | None\nNone | None | communication, perception and the ability to move and manipulate objects. It is the science and engineering of making intelligent | None | None | None | None | None\nNone | None | machines, especially intelligent computer programs | None | None | None | None | None\nNone | None | None |  | None | None | None | None\nNone | ARTIFICIAL INTELLIGENCE METHODS: | None | None | None | None | None | None",
+      "page_number": 1,
+      "table_number": null
+    },
+    {
+      "caption": "Table from page 1",
+      "content": "IJRTI2304061 | International Journal for Research Trends and Innovation (www.ijrti.org) | 356",
+      "page_number": 1,
+      "table_number": null
+    },
+    {
+      "caption": "Table from page 2",
+      "content": "IJRTI2304061 | International Journal for Research Trends and Innovation (www.ijrti.org) | 357",
+      "page_number": 2,
+      "table_number": null
+    },
+    {
+      "caption": "Table from page 3",
+      "content": "IJRTI2304061 | International Journal for Research Trends and Innovation (www.ijrti.org) | 358",
+      "page_number": 3,
+      "table_number": null
+    },
+    {
+      "caption": "Table from page 4",
+      "content": " | None | SOME OTHER APPLICATIONS: | None | None\nNone | None |  | None | None\n1. Fraud detection. The financial services industry uses artificial intelligence in two ways. Initial scoring of applications for | None | None | None | None\ncredit uses AI to understand creditworthiness. More advanced AI engines are employed to monitor and detect fraudulent | None | None | None | None\npayment card transactions in real time. | None | None | None | None\n2. Virtual customer assistance (VCA). Call centers use VCA to predict and respond to customer inquiries outside of human | None | None | None | None\ninteraction. Voice recognition, coupled with simulated human dialog, is the first point of interaction in a customer service | None | None | None | None\ninquiry. Higher-level inquiries are redirected to a human. | None | None | None | None\n3. Medicine: A medical clinic can use AI systems to organize bed schedules, make a staff rotation, and provide medical | None | None | None | None\ninformation. AI has also application in fields of cardiology (CRG), neurology (MRI), embryology (sonography), complex | None | None | None | None\noperations of internal organs etc. | None | None | None | None\n4. Heavy Industries : Huge machines involve risk in their manual maintenance and working. So in becomes necessary part to | None | None | None | None\nhave an efficient and safe operation agent in their operation. | None | None | None | None\n5. Telecommunications: Many telecommunications companies make use of heuristic search in the management of their | None | None | None | None\nworkforcesfor example BT Group has deployed heuristic search in a scheduling application that provides the work schedules | None | None | None | None\nof 20000 engineers. | None | None | None | None\n6. Music: Scientists are trying to make the computer emulate the activities of the skillful musician. Composition, performance, | None | None | None | None\nmusic theory, sound processing are some of the major areas on which research in Music and Artificial Intelligence are | None | None | None | None\nfocusing on. Eg:chucks, Orchextra, smartmusic etc. | None | None | None | None\n7. Antivirus: Artificial intelligence (AI) techniques have played increasingly important role in antivirus detection. At present, | None | None | None | None\nsome principal artificial intelligence techniques applied in antivirus detection It improves the performance of antivirus | None | None | None | None\ndetection systems, and promotes the production of new artificial intelligence algorithm and the application in antivirus | None | None | None | None\ndetection to integrate antivirus detection with artificial intelligence. | None | None | None | None\n | None | None | None | None\n | Future of AI | None | None | None\nNone |  | None | None | None\nNone | Looking at the features and its wide application we may definitely stick to artificial intelligence. Seeing at the development | None | None | None\nNone | of AI, is it that the future world is becoming artificial. Biological intelligence is fixed, because it is an old, mature paradigm, | None | None | None\nNone | but the new paradigm of non-biological computation and intelligence is growing exponentially. The memory capacity of the | None | None | None\nNone | human brain is probably of the order of ten thousand million binary digits. But most of this is probably used in remembering | None | None | None\nNone | visual impressions, and other comparatively wasteful ways . Hence we can say that as natural intelligence is limited and | None | None | None\nNone | volatile too world may now depend upon computers for smooth working.A | None | None | rtificial intelligence (AI) is truly a revolutionary\nNone | feat of computer science, set to become a core component of all modern software over the coming years and decades. This | None | None | None\nNone | presents a threat but also an opportunity. AI will be deployed to augment both defensive and offensive cyber operations. | None | None | None\nNone | Additionally, new means of cyber attack will be invented to take advantage of the particular weaknesses of AI technology. | None | None | None\nNone | Finally, the importance of data will be amplified by AI\u2019s appetite for large amounts of training data, redefining how we must | None | None | None\nNone | think about data protection. Prudent governance at the global level will be essential to ensure that this era-defining | None | None | None\nNone | technology will bring about broadly shared safety and prosperity. | None |  | None\nNone |  | None | None | None\nNone |  | None | None | None\nNone |  | None | None | None\nNone |  | None | None | None\nNone |  | None | None | None\nNone | NetApp and artificial intelligence | None | None | None",
+      "page_number": 4,
+      "table_number": null
+    },
+    {
+      "caption": "Table from page 4",
+      "content": "IJRTI2304061 | International Journal for Research Trends and Innovation (www.ijrti.org) | 359",
+      "page_number": 4,
+      "table_number": null
+    },
+    {
+      "caption": "Table from page 5",
+      "content": "Conclusion | None | None | None\n |  | None | None\nTill now we have discussed in brief about Artificial Intelligence. We have discussed some of its principles, its applications, its | None | None | None\nachievements etc.The ultimate goal of institutions and scientists working on AI is to solve majority of the problems or to achieve | None | None | None\nthe tasks which we humans directly can\u2019t accomplish. It is for sure that development in this field of computer science will change | None | None | None\nthe complete scenario of the world Now it is the responsibility of creamy layer of engineers to develop this field. | None | None | None\nReferences\n1. http://en.wikibooks.org/wiki/Computer_Science:Artificial_Intelligence\nhttp://www.howstuffworks.com/arificialintelligence\n2. http:// www.google.co.in\n3. http://www.library.thinkquest.org\n4. https://www.javatpoint.com/application-of-ai\n5. https://www.educba.com/artificial-intelligence-techniques/\n6. https://www.cigionline.orgw/articles/cyber-security-\nbattlefield/?utm_source=google_ads&utm_medium=grant&gclid=EAIaIQobChMIsdz9qLSF_AIVzQ0rCh1bNQylEAA\nYAiAAEgI40_D_BwE | None | None | \nNone | References | None | None\nNone |  | None | None\nNone | None | 1. http://en.wikibooks.org/wiki/Computer_Science:Artificial_Intelligence | None\nNone | None | http://www.howstuffworks.com/arificialintelligence | None\nNone | None | 2. http:// www.google.co.in | None\nNone | None | 3. http://www.library.thinkquest.org | None\nNone | None | 4. https://www.javatpoint.com/application-of-ai | None\nNone | None | 5. https://www.educba.com/artificial-intelligence-techniques/ | None\nNone | None | 6. https://www.cigionline.orgw/articles/cyber-security- | None\nNone | None | battlefield/?utm_source=google_ads&utm_medium=grant&gclid=EAIaIQobChMIsdz9qLSF_AIVzQ0rCh1bNQylEAA | None\nNone | None | YAiAAEgI40_D_BwE | None",
+      "page_number": 5,
+      "table_number": null
+    },
+    {
+      "caption": "Table from page 5",
+      "content": "IJRTI2304061 | International Journal for Research Trends and Innovation (www.ijrti.org) | 360",
+      "page_number": 5,
+      "table_number": null
+    }
+  ],
+  "references": [
+    "1. http://en.wikibooks.org/wiki/Computer_Science:Artificial_Intelligence http://www.howstuffworks.com/arificialintelligence",
+    "2. http:// www.google.co.in",
+    "3. http://www.library.thinkquest.org",
+    "4. https://www.javatpoint.com/application-of-ai",
+    "5. https://www.educba.com/artificial-intelligence-techniques/",
+    "6. https://www.cigionline.orgw/articles/cyber-security- battlefield/?utm_source=google_ads&utm_medium=grant&gclid=EAIaIQobChMIsdz9qLSF_AIVzQ0rCh1bNQylEAA YAiAAEgI40_D_BwE"
+  ],
+  "page_count": 5,
+  "processed_at": "2025-06-24T23:04:41.662240"
+}

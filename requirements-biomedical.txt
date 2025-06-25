@@ -1,0 +1,33 @@
+# AI Research Assistant - Biomedical Requirements
+# Additional dependencies for biomedical paper analysis
+
+# Include base requirements
+-r requirements.txt
+
+# Biomedical NLP models (compatible with Python 3.13)
+scispacy>=0.5.0
+# bio-embeddings>=0.1.6  # Note: Limited Python 3.13 support
+
+# Medical terminology processing
+medspacy>=1.0.0
+negspacy>=1.0.0
+
+# Biomedical named entity recognition
+en-core-sci-sm @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_core_sci_sm-0.5.1.tar.gz
+en-core-sci-md @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_core_sci_md-0.5.1.tar.gz
+
+# Chemical and molecular processing (optional)
+# rdkit>=2022.9.0  # Install via conda: conda install -c conda-forge rdkit
+chemparse>=0.1.0
+
+# Protein sequence analysis
+biopython>=1.79
+# biotransformers>=0.1.0  # Limited Python 3.13 support
+
+# Medical databases
+pubchempy>=1.0.4
+mygene>=3.2.2
+
+# Biomedical text mining (optional)
+# pymedeus>=0.1.0  # Limited availability
+bioservices>=1.8.0
