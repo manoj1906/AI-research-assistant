@@ -148,15 +148,41 @@ class AcademicQuestionAnswering:
         return patterns
 
     def detect_question_type(self, question: str) -> str:
-        """Detect the type of research question."""
-        question_lower = question.lower()
-
+        """Detect the type of research question with improved general question handling."""
+        question_lower = question.lower().strip()
+        
+        # Handle very short/generic questions explicitly
+        very_generic = [
+            'what is this',
+            'what is that',
+            'what is it',
+            'describe this',
+            'tell me about this',
+            'what does this say',
+            'what is the content',
+            'what is in this',
+            'explain this',
+            'summarize this'
+        ]
+        
+        if any(generic in question_lower for generic in very_generic):
+            return 'summary'  # Treat as summary rather than general for better handling
+        
         # Check patterns for each question type
         for question_type, patterns in self.question_patterns.items():
             for pattern in patterns:
                 if pattern.search(question_lower):
                     return question_type
 
+        # Better classification for borderline cases
+        # If question contains "what" and is short, likely wants summary
+        if 'what' in question_lower and len(question.split()) <= 5:
+            return 'summary'
+        
+        # If question asks about "how", likely methodology
+        if any(word in question_lower for word in ['how', 'method', 'approach', 'technique']):
+            return 'methodology'
+            
         # Default to general if no specific type detected
         return 'general'
 
@@ -373,25 +399,50 @@ class AcademicQuestionAnswering:
         )
 
     def _answer_summary_question(self, sections: List[PaperSection]) -> ResearchAnswer:
-        """Answer summary questions."""
+        """Answer summary questions with improved content extraction."""
         # Use abstract if available, otherwise combine introduction and conclusion
         summary_text = ""
+        source_section = None
 
+        # First, try to find abstract
         for section in sections:
             if 'abstract' in section.title.lower():
-                summary_text = section.content
+                summary_text = section.content.strip()
+                source_section = section.title
                 break
 
+        # If no abstract, look for introduction or first substantial section
         if not summary_text:
-            # Combine multiple sections for summary
-            combined_text = " ".join(
-                [section.content for section in sections[:2]])
-            summary_text = combined_text[:500]
+            for section in sections:
+                if any(keyword in section.title.lower() for keyword in ['introduction', 'intro', 'background']):
+                    # Take first part of introduction
+                    summary_text = section.content[:800].strip()
+                    source_section = section.title
+                    break
+            
+            # If still no summary, use first section with substantial content
+            if not summary_text:
+                for section in sections:
+                    if len(section.content.strip()) > 200:
+                        summary_text = section.content[:600].strip()
+                        source_section = section.title
+                        break
+
+        # Final fallback: combine multiple sections
+        if not summary_text and sections:
+            combined_text = " ".join([s.content for s in sections[:3] if len(s.content.strip()) > 50])
+            summary_text = combined_text[:700].strip()
+            source_section = "Multiple sections"
+
+        # Ensure we have something to return
+        if not summary_text:
+            summary_text = "This appears to be a research paper, but I couldn't extract a clear summary from the available content. Please try asking about specific aspects like methodology, results, or contributions."
 
         return ResearchAnswer(
             answer=summary_text,
-            confidence=0.8,
+            confidence=0.8 if source_section else 0.4,
             evidence_text=summary_text[:300],
+            source_section=source_section,
             answer_type="summary"
         )
 
@@ -432,55 +483,111 @@ class AcademicQuestionAnswering:
         )
 
     def _answer_general_question(self, question: str, sections: List[PaperSection]) -> ResearchAnswer:
-        """Answer general questions using keyword matching."""
+        """Answer general questions using improved keyword matching and fallback strategies."""
+        logger.info(f"Processing general question: {question}")
+        
+        # Handle very generic questions
+        if len(question.split()) <= 3 and any(word in question.lower() for word in ['what', 'this', 'that', 'it']):
+            # For generic questions like "what is this?", provide a general paper overview
+            if sections:
+                # Try to find title/abstract first
+                title_abstract = ""
+                for section in sections:
+                    if any(keyword in section.title.lower() for keyword in ['title', 'abstract', 'summary']):
+                        title_abstract = section.content[:800]
+                        break
+                
+                if not title_abstract and sections:
+                    # Fallback to first section
+                    title_abstract = sections[0].content[:800]
+                
+                if title_abstract:
+                    return ResearchAnswer(
+                        answer=f"This appears to be a research paper. {title_abstract}",
+                        confidence=0.7,
+                        evidence_text=title_abstract[:300],
+                        answer_type="general"
+                    )
+        
         # Extract keywords from question
         question_words = set(re.findall(r'\b\w+\b', question.lower()))
-        question_words = {word for word in question_words if len(
-            word) > 3}  # Filter short words
+        question_words = {word for word in question_words if len(word) > 2}  # Include 3+ char words
+        
+        # Remove common stop words
+        stop_words = {'the', 'is', 'at', 'which', 'on', 'and', 'a', 'to', 'are', 'as', 'was', 'for', 'with', 'by'}
+        question_words = question_words - stop_words
 
         best_match = ""
         best_score = 0
+        best_section = None
 
+        # Search through sections for relevant content
         for section in sections:
             content = section.content.lower()
             content_words = set(re.findall(r'\b\w+\b', content))
 
             # Calculate similarity
-            overlap = len(question_words.intersection(content_words))
-            score = overlap / max(len(question_words), 1)
+            if question_words:
+                overlap = len(question_words.intersection(content_words))
+                score = overlap / len(question_words)
+            else:
+                score = 0
 
             if score > best_score:
                 best_score = score
+                best_section = section
+                
                 # Find the most relevant paragraph
                 paragraphs = content.split('\n\n')
                 best_paragraph = ""
                 best_paragraph_score = 0
 
                 for paragraph in paragraphs:
-                    paragraph_words = set(re.findall(
-                        r'\b\w+\b', paragraph.lower()))
-                    paragraph_overlap = len(
-                        question_words.intersection(paragraph_words))
-                    paragraph_score = paragraph_overlap / \
-                        max(len(question_words), 1)
+                    if len(paragraph.strip()) < 50:  # Skip very short paragraphs
+                        continue
+                        
+                    paragraph_words = set(re.findall(r'\b\w+\b', paragraph.lower()))
+                    if question_words:
+                        paragraph_overlap = len(question_words.intersection(paragraph_words))
+                        paragraph_score = paragraph_overlap / len(question_words)
+                    else:
+                        paragraph_score = 0
 
                     if paragraph_score > best_paragraph_score:
                         best_paragraph_score = paragraph_score
                         best_paragraph = paragraph
 
-                best_match = best_paragraph[:500]
+                best_match = best_paragraph[:600] if best_paragraph else content[:600]
 
-        if best_match:
-            answer = best_match
-            confidence = min(best_score, 0.8)
+        # Provide fallback answer if no good match found
+        if best_match and best_score > 0.1:
+            answer = best_match.strip()
+            confidence = min(best_score * 0.8, 0.8)  # Cap confidence at 0.8
         else:
-            answer = "I couldn't find a specific answer to your question in the available content."
-            confidence = 0.3
+            # Fallback strategy: provide paper overview
+            if sections:
+                # Get the first substantial section (likely abstract or introduction)
+                fallback_content = ""
+                for section in sections:
+                    if len(section.content.strip()) > 100:
+                        fallback_content = section.content[:500]
+                        break
+                
+                if fallback_content:
+                    answer = f"Based on the available content: {fallback_content.strip()}"
+                    confidence = 0.4
+                else:
+                    answer = "I have access to this paper but couldn't find content specifically relevant to your question. Please try asking a more specific question about the paper's methodology, results, or contributions."
+                    confidence = 0.2
+            else:
+                answer = "I don't have access to the paper content to answer your question. Please ensure the paper was properly uploaded and processed."
+                confidence = 0.1
 
         return ResearchAnswer(
             answer=answer,
             confidence=confidence,
             evidence_text=best_match[:300] if best_match else "",
+            source_section=best_section.title if best_section else None,
             answer_type="general"
         )
 
